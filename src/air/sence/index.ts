@@ -1,7 +1,8 @@
 import * as BABYLON from "@babylonjs/core";
 import "babylonjs-materials";
 import { AmmoJSPlugin } from "@babylonjs/core";
-import { url } from "@config";
+import { url } from "@config/index";
+console.log(url, "url----------------");
 //  import { meshList } from '../base/test2';
 
 /**
@@ -73,19 +74,19 @@ export class AirportScene {
   }
 
   private createSkybox(scene: BABYLON.Scene) {
-    let skyboxMaterial = new BABYLON.StandardMaterial("skyBox", scene);
-    skyboxMaterial.backFaceCulling = false;
-    skyboxMaterial.diffuseTexture = new BABYLON.Texture(
+    let skyBoxMaterial = new BABYLON.StandardMaterial("skyBox", scene);
+    skyBoxMaterial.backFaceCulling = false;
+    skyBoxMaterial.diffuseTexture = new BABYLON.Texture(
       url + "assets/texture/skybox6.png",
       scene
     );
-    skyboxMaterial.emissiveTexture = new BABYLON.Texture(
+    skyBoxMaterial.emissiveTexture = new BABYLON.Texture(
       url + "assets/texture/skybox6.png",
       scene
     );
-    skyboxMaterial.specularColor = new BABYLON.Color3(0, 0, 0);
-    skyboxMaterial.emissiveColor = new BABYLON.Color3(0, 0, 0);
-    skyboxMaterial.disableLighting = true;
+    skyBoxMaterial.specularColor = new BABYLON.Color3(0, 0, 0);
+    skyBoxMaterial.emissiveColor = new BABYLON.Color3(0, 0, 0);
+    skyBoxMaterial.disableLighting = true;
 
     /**
      * 天空球
